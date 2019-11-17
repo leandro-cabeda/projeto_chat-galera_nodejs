@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+        crossorigin="anonymous" media="screen">
+
+    <link href="css/style.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center vertical-offset-80">
+            <div class="col-sm-4 col-6">
+                <div class="card">
+                    <h3>Bem vindo ao Chat Galera</h3>
+                    <img src="images/multiroom_chat_2.png" class="img-responsive" alt="Chat" />
+                    <div class="card-body">
+                        <form role="form" method="POST" action="/chat" class="form-signin">
+                            <input class="form-control" autocomplete="off" name="nickname" placeholder="Nome ou NickName" id="nickname" type="text">
+                            <input class="btn btn-lg btn-success btn-block" type="submit" id="entrar" value="Entrar">
+                        </form>
+                    </div>
+                </div>
+                <%if(validacao.length>0) { %>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-danger">
+                                <h2 class="text-center">Atenção!</h2>
+                                <ul class="list-group list-group-flush">
+                                    <% for(let i=0; i<validacao.length;i++){%>
+                                        <li class="list-group-item"><%= validacao[i].msg %></li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
